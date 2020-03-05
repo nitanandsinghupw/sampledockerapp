@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: demoimage 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: demoimage 
+    spec:
+      containers:
+        - name: demoimage 
+          image: samplecontainerreg.azurecr.io/demoimage
+          ports:
+          - containerPort: 80
